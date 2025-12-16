@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
 	import { page } from '$app/stores';
+	import favicon from '$lib/assets/favicon.png';
 
 	let { children } = $props();
 
@@ -9,6 +10,7 @@
 </script>
 
 <svelte:head>
+	<link rel="icon" href={favicon} />
 	<title>ClaimsBoost - Find Personal Injury Lawyers Near You</title>
 	<meta name="description" content="Find top-rated personal injury lawyers near you. ClaimsBoost helps you connect with experienced attorneys and get help submitting your injury claim." />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
