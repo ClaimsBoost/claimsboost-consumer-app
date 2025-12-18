@@ -297,6 +297,23 @@
 						</div>
 					{/if}
 				</div>
+
+				<!-- Claim Profile Section -->
+				<div class="claim-profile-section">
+					<div class="claim-profile-content">
+						<svg class="claim-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+							<circle cx="12" cy="7" r="4"/>
+						</svg>
+						<span class="claim-text">Work at this firm?</span>
+						<a href="/claim-profile?firm={firm.slug}" class="claim-link">
+							Claim this profile
+							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M5 12h14M12 5l7 7-7 7"/>
+							</svg>
+						</a>
+					</div>
+				</div>
 			</div>
 
 			<!-- Recent Settlements Section -->
@@ -805,6 +822,54 @@
 	.contact-item a:hover {
 		color: #2563EB;
 		text-decoration: underline;
+	}
+
+	/* Claim Profile Section */
+	.claim-profile-section {
+		margin-top: 24px;
+		padding-top: 20px;
+		border-top: 1px solid #e5e7eb;
+	}
+
+	.claim-profile-content {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		flex-wrap: wrap;
+	}
+
+	.claim-icon {
+		color: #9ca3af;
+		flex-shrink: 0;
+	}
+
+	.claim-text {
+		color: #6b7280;
+		font-size: 14px;
+	}
+
+	.claim-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		color: #2563eb;
+		font-size: 14px;
+		font-weight: 500;
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.claim-link:hover {
+		color: #1d4ed8;
+		text-decoration: underline;
+	}
+
+	.claim-link svg {
+		transition: transform 0.2s;
+	}
+
+	.claim-link:hover svg {
+		transform: translateX(2px);
 	}
 
 	.cta-button {
