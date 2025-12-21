@@ -14,12 +14,13 @@ export async function GET() {
 		{ url: '/get-started', priority: '0.7', changefreq: 'monthly' }
 	];
 
-	// Fetch all verified law firms with slugs
+	// Fetch all verified law firms with slugs (excluding duplicates)
 	const { data: firms, error } = await supabaseServer
 		.from('verified_law_firms')
 		.select('slug, city, state, updated_at')
 		.not('slug', 'is', null)
-		.eq('is_personal_injury_firm', true);
+		.eq('is_personal_injury_firm', true)
+		.or('is_duplicate.is.null,is_duplicate.eq.false');
 
 	if (error) {
 		console.error('Sitemap: Error fetching firms:', error);
